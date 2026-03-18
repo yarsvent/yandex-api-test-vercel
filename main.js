@@ -45,7 +45,6 @@ async function initMap() {
           }
       );
 
-      const dataSource = new ymaps3.YMapFeatureDataSource({id: 'id'});
       const layer = new ymaps3.YMapDefaultSchemeLayer({
         customization: [
           {
@@ -63,6 +62,9 @@ async function initMap() {
       });
       map.addChild(layer);
 
+      const features_layer = new ymaps3.YMapDefaultFeaturesLayer();
+      map.addChild(features_layer);
+
       const markerElement = document.createElement('div');
       markerElement.className = 'marker-class';
       markerElement.innerText = "I'm marker!";
@@ -78,7 +80,6 @@ async function initMap() {
       );
 
       map
-        .addChild(dataSource)
         .addChild(marker);
     }
 }
