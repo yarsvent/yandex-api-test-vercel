@@ -45,7 +45,7 @@ async function initMap() {
           }
       );
 
-      const dataSource = new YMapFeatureDataSource({id: 'id'});
+      const dataSource = new ymaps3.YMapFeatureDataSource({id: 'id'});
       const layer = new ymaps3.YMapDefaultSchemeLayer({
         customization: [
           {
