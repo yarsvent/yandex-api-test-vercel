@@ -47,7 +47,7 @@ async function initMap() {
 
       const layer = new ymaps3.YMapDefaultSchemeLayer({
         customization: [
-          {
+          /*{
             tags: {
               any: ['industrial']
             },
@@ -57,7 +57,7 @@ async function initMap() {
                 color: '#CC0000'
               }
             ]
-          }
+          }*/
         ]
       });
       map.addChild(layer);
@@ -67,13 +67,12 @@ async function initMap() {
 
       const markerElement = document.createElement('div');
       markerElement.className = 'marker-class';
-      markerElement.innerText = "I'm marker!";
+      markerElement.innerText = "Пидорас";
 
       const marker = new ymaps3.YMapMarker(
         {
           coordinates: [37.588144, 55.733842],
-          draggable: true,
-          mapFollowsOnDrag: true
+          draggable: false
         },
         markerElement
       );
