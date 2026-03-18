@@ -6,3 +6,10 @@
   border: 1px solid black;
   width: auto;
 }
+.marker-class {
+  width: 200px;
+  height: 200px;
+  border: 2px solid red;
+  background-color: blue;
+  display: inline-block;
+}
