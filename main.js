@@ -67,7 +67,7 @@ async function initMap() {
 
       const markerElement = document.createElement('div');
       markerElement.className = 'marker-class';
-      markerElement.innerText = "Пидорас";
+      markerElement.innerText = "Пидорасы";
 
       const marker = new ymaps3.YMapMarker(
         {
