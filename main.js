@@ -71,7 +71,6 @@ async function initMap() {
 
       const marker = new ymaps3.YMapMarker(
         {
-          source: 'id',
           coordinates: [37.588144, 55.733842],
           draggable: true,
           mapFollowsOnDrag: true
