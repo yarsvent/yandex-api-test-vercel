@@ -11,40 +11,40 @@ const {YMap, YMapDefaultSchemeLayer} = ymaps3;
           {
               location: {
                   center: [37.588144, 55.733842],
-                  bounds: [[-0.118092, 51.509865], [-0.118092, 51.509865]],
                   duration: 200,
                   zoom: 10
-              },
-              customization: [
-                // Делаем прозрачными все геометрии водных объектов.
-                {
-                  tags: {
-                    all: ['water']
-                  },
-                  elements: 'geometry',
-                  stylers: [
-                    {
-                      opacity: 0
-                    }
-                  ]
-                },
-                // Меняем цвет подписей для всех POI и узлов сети общественного транспорта.
-                {
-                  tags: {
-                    any: ['poi', 'transit_location']
-                  },
-                  elements: 'label.text.fill',
-                  stylers: [
-                    {
-                      color: '#0000DD'
-                    }
-                  ]
-                }
-              ]
+              }
           }
       );
 
-      const layer = new ymaps3.YMapDefaultSchemeLayer();
+      const layer = new ymaps3.YMapDefaultSchemeLayer({
+        customization: [
+          // Делаем прозрачными все геометрии водных объектов.
+          {
+            tags: {
+              all: ['water']
+            },
+            elements: 'geometry',
+            stylers: [
+              {
+                opacity: 0
+              }
+            ]
+          },
+          // Меняем цвет подписей для всех POI и узлов сети общественного транспорта.
+          {
+            tags: {
+              any: ['poi', 'transit_location']
+            },
+            elements: 'label.text.fill',
+            stylers: [
+              {
+                color: '#0000DD'
+              }
+            ]
+          }
+        ]
+      });
       map.addChild(layer);
     }
 }
