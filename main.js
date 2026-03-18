@@ -66,9 +66,9 @@ async function initMap() {
       markerElement.className = 'marker-class';
       markerElement.innerText = "I'm marker!";
 
-      const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
+      await const {YMapDefaultMarker} = ymaps3.import('@yandex/ymaps3-markers@0.0.1');
 
-      const marker = new YMapDefaultMarker(
+      await const marker = new YMapDefaultMarker(
         {
           source: 'markerSource',
           coordinates: [37.588144, 55.733842],
