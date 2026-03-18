@@ -34,12 +34,12 @@ const {YMap, YMapDefaultSchemeLayer} = ymaps3;
           // Меняем цвет подписей для всех POI и узлов сети общественного транспорта.
           {
             tags: {
-              any: ['poi', 'transit_location']
+              any: ['industrial']
             },
-            elements: 'label.text.fill',
+            elements: 'geometry.fill',
             stylers: [
               {
-                color: '#0000DD'
+                color: 'red'
               }
             ]
           }
