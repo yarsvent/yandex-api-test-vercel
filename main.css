@@ -1,14 +1,8 @@
+* {
+  box-sizing: border-box;
+}
 .map {
   background-color: blue;
   border: 1px solid black;
   width: auto;
-  height: 50%;
-}
-#panoramaDisplay {
-  width: auto;
-  height: 35%;
-  border: 1px solid black;
-}
-* {
-  box-sizing: border-box;
 }

@@ -75,24 +75,21 @@ const {YMap, YMapDefaultSchemeLayer} = ymaps3;
         ]
       });
       map.addChild(layer);
-    }
-}
 
-function generatePanorama() {
-  var locateRequest = ymaps3.panorama.locate([55.83403, 37.623370]);
+      const markerElement = document.createElement('div');
+      markerElement.className = 'marker-class';
+      markerElement.innerText = "I'm marker!";
 
-  locateRequest.then(
-    function (panoramas) {
-      if (panoramas.length) {
-        // Создание на странице плеера панорам.
-        var player = new ymaps3.panorama.Player('div_id', panoramas[0], {
-              // Опции панорамы.
-              // direction - направление взгляда.
-              direction: [0, -50]
-            });
-      } else {
-        console.log("В заданной точке нет панорам.");
-      }
+      const marker = new YMapMarker(
+        {
+          source: 'markerSource',
+          coordinates: [37.588144, 55.733842],
+          draggable: true,
+          mapFollowsOnDrag: true
+        },
+        markerElement
+      );
+
+      map.addChild(marker);
     }
-  );
 }
