@@ -31,8 +31,7 @@ function random_y() {
 }
 
 async function initMap() {
-    // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
-const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+    const {YMap, YMapDefaultSchemeLayer} = ymaps3;
     await ymaps3.ready.then(init);
 
     function init() {
@@ -48,19 +47,6 @@ const {YMap, YMapDefaultSchemeLayer} = ymaps3;
 
       const layer = new ymaps3.YMapDefaultSchemeLayer({
         customization: [
-          // Делаем прозрачными все геометрии водных объектов.
-          {
-            tags: {
-              all: ['water']
-            },
-            elements: 'geometry',
-            stylers: [
-              {
-                opacity: 0
-              }
-            ]
-          },
-          // Меняем цвет подписей для всех POI и узлов сети общественного транспорта.
           {
             tags: {
               any: ['industrial']
