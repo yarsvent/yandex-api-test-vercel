@@ -45,6 +45,7 @@ async function initMap() {
           }
       );
 
+      const dataSource = new YMapFeatureDataSource({id: 'id'});
       const layer = new ymaps3.YMapDefaultSchemeLayer({
         customization: [
           {
@@ -68,6 +69,7 @@ async function initMap() {
 
       const marker = new ymaps3.YMapMarker(
         {
+          source: 'id',
           coordinates: [37.588144, 55.733842],
           draggable: true,
           mapFollowsOnDrag: true
