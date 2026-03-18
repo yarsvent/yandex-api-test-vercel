@@ -10,10 +10,10 @@ body {
   width: auto;
 }
 .marker-class {
-  width: 3.5rem;
+  width: 3.8rem;
   height: 2rem;
   position: absolute;
-  left: -1.75rem;
+  left: -1.9rem;
   top: -0.75rem;
 
   font-size: 12px;
@@ -21,6 +21,6 @@ body {
   background-color: white;
   text-align: center;
   display: inline-block;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   padding: 0.4rem;
 }
