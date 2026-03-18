@@ -3,7 +3,7 @@ setTimeout(initMap, 500);
 async function initMap() {
     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
 const {YMap, YMapDefaultSchemeLayer} = ymaps3;
-    await ymaps3.ready.then(init);;
+    await ymaps3.ready.then(init);
 
     function init() {
       // Иницилиазируем карту
