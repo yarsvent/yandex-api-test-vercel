@@ -21,6 +21,8 @@ var rand = {};
     return Math.random() * (max - min) + min;
   }
 
+await const {YMapDefaultMarker} = ymaps3.import('@yandex/ymaps3-markers@0.0.1');
+
 setTimeout(initMap, 500);
 
 function random_x() {
@@ -66,9 +68,7 @@ async function initMap() {
       markerElement.className = 'marker-class';
       markerElement.innerText = "I'm marker!";
 
-      await const {YMapDefaultMarker} = ymaps3.import('@yandex/ymaps3-markers@0.0.1');
-
-      await const marker = new YMapDefaultMarker(
+      const marker = new YMapDefaultMarker(
         {
           source: 'markerSource',
           coordinates: [37.588144, 55.733842],
