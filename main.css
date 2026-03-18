@@ -10,10 +10,11 @@ body {
   width: auto;
 }
 .marker-class {
-  width: 4.2rem;
+  --markerWidth: 4rem;
+  width: var(--markerWidth);
   height: 2rem;
   position: absolute;
-  left: -2.1rem;
+  left: calc(var(--markerWidth) / -2);
   top: -0.75rem;
 
   font-size: 12px;
