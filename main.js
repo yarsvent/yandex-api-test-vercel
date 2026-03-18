@@ -79,13 +79,13 @@ const {YMap, YMapDefaultSchemeLayer} = ymaps3;
 }
 
 function generatePanorama() {
-  var locateRequest = ymaps.panorama.locate([55.83403, 37.623370]);
+  var locateRequest = ymaps3.panorama.locate([55.83403, 37.623370]);
 
   locateRequest.then(
     function (panoramas) {
       if (panoramas.length) {
         // Создание на странице плеера панорам.
-        var player = new ymaps.panorama.Player('div_id', panoramas[0], {
+        var player = new ymaps3.panorama.Player('div_id', panoramas[0], {
               // Опции панорамы.
               // direction - направление взгляда.
               direction: [0, -50]
