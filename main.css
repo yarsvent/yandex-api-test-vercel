@@ -10,10 +10,10 @@ body {
   width: auto;
 }
 .marker-class {
-  width: 3rem;
+  width: 3.5rem;
   height: 1.5rem;
   position: absolute;
-  left: -1.5rem;
+  left: -1.75rem;
   top: -0.75rem;
 
   font-size: 12px;
