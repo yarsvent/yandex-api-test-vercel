@@ -10,7 +10,7 @@ body {
   width: auto;
 }
 .marker-class {
-  --markerWidth: 4rem;
+  --markerWidth: 6rem;
   width: var(--markerWidth);
   height: 2rem;
   position: absolute;
