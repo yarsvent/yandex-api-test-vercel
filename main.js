@@ -39,7 +39,7 @@ async function initMap() {
           document.getElementById('map'),
           {
               location: {
-                  center: [random_x(), random_y()],
+                  center: [37.588144, 55.733842],
                   zoom: 10
               }
           }
@@ -54,7 +54,7 @@ async function initMap() {
             elements: 'geometry.fill',
             stylers: [
               {
-                color: '#FF0000'
+                color: '#CC0000'
               }
             ]
           }
