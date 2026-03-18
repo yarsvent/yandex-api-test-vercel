@@ -39,8 +39,8 @@ async function initMap() {
           document.getElementById('map'),
           {
               location: {
-                  center: [37.588144, 55.733842],
-                  zoom: 30
+                  center: [55.753636, 37.648308],
+                  zoom: 15
               }
           }
       );
@@ -71,7 +71,7 @@ async function initMap() {
 
       const marker = new ymaps3.YMapMarker(
         {
-          coordinates: [37.588144, 55.733842],
+          coordinates: [55.753636, 37.648308],
           draggable: false
         },
         markerElement
