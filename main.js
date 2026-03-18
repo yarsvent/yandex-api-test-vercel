@@ -62,14 +62,11 @@ async function initMap() {
       });
       map.addChild(layer);
 
-      ymaps3.import.registerCdn('https://cdn.jsdelivr.net/npm/{package}', '@yandex/ymaps3-default-ui-theme@latest');
-      const pkg = await ymaps3.import('@yandex/ymaps3-default-ui-theme');
-
       const markerElement = document.createElement('div');
       markerElement.className = 'marker-class';
       markerElement.innerText = "I'm marker!";
 
-      const marker = new pkg(
+      const marker = new ymaps3.YMapMarker(
         {
           source: 'markerSource',
           coordinates: [37.588144, 55.733842],
