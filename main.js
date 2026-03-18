@@ -62,20 +62,13 @@ async function initMap() {
       });
       map.addChild(layer);
 
-      const markerElement = document.createElement('div');
-      markerElement.className = 'marker-class';
-      markerElement.innerText = "I'm marker!";
+      import {YMapDefaultMarker} from '@yandex/ymaps3-default-ui-theme';
 
-      const marker = new YMapMarker(
-        {
-          source: 'markerSource',
+      map.addChild(new YMapDefaultMarker({
           coordinates: [37.588144, 55.733842],
-          draggable: true,
-          mapFollowsOnDrag: true
-        },
-        markerElement
-      );
-
-      map.addChild(marker);
+          title: 'Hello World!',
+          subtitle: 'kind and bright',
+          color: 'blue'
+      }));
     }
 }
