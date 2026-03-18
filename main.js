@@ -62,8 +62,6 @@ async function initMap() {
       });
       map.addChild(layer);
 
-      import {YMapDefaultMarker} from '@yandex/ymaps3-default-ui-theme';
-
       map.addChild(new YMapDefaultMarker({
           coordinates: [37.588144, 55.733842],
           title: 'Hello World!',
