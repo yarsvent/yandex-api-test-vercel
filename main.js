@@ -77,6 +77,8 @@ async function initMap() {
         markerElement
       );
 
-      map.addChild(marker);
+      map
+        .addChild(dataSource)
+        .addChild(marker);
     }
 }
