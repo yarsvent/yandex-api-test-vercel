@@ -39,7 +39,7 @@ const {YMap, YMapDefaultSchemeLayer} = ymaps3;
             elements: 'geometry.fill',
             stylers: [
               {
-                color: 'red'
+                color: '#FF0000'
               }
             ]
           }
