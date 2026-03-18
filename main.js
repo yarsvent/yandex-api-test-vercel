@@ -24,10 +24,10 @@ var rand = {};
 setTimeout(initMap, 500);
 
 function random_x() {
-  return rand.numb2(20,50);
+  return rand.numb2(20,70);
 }
 function random_y() {
-  return rand.numb2(20,50);
+  return rand.numb2(20,40);
 }
 
 async function initMap() {
@@ -76,4 +76,23 @@ const {YMap, YMapDefaultSchemeLayer} = ymaps3;
       });
       map.addChild(layer);
     }
+}
+
+function generatePanorama() {
+  var locateRequest = ymaps.panorama.locate([55.83403, 37.623370]);
+
+  locateRequest.then(
+    function (panoramas) {
+      if (panoramas.length) {
+        // Создание на странице плеера панорам.
+        var player = new ymaps.panorama.Player('div_id', panoramas[0], {
+              // Опции панорамы.
+              // direction - направление взгляда.
+              direction: [0, -50]
+            });
+      } else {
+        console.log("В заданной точке нет панорам.");
+      }
+    }
+  );
 }
