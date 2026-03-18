@@ -1,4 +1,34 @@
+var rand = {};
+  rand.percent = function(percent) {
+    return Math.random() * 100 <= percent;
+  }
+  rand.numb = function(max) {
+    return Math.floor(Math.random() * max + 1);
+  }
+  rand.list = function(list) {
+    var tmp = list[Math.floor(Math.random() * list.length)];
+    return tmp;
+  }
+  rand.prop = function(obj) {
+    var keys = Object.keys(obj)
+    return obj[keys[ keys.length * Math.random() << 0]];
+  };
+  rand.prop2 = function(obj) {
+    var keys = Object.keys(obj)
+    return keys[ keys.length * Math.random() << 0];
+  };
+  rand.numb2 = function(min,max) {
+    return Math.random() * (max - min) + min;
+  }
+
 setTimeout(initMap, 500);
+
+function random_x() {
+  return rand.numb2(20,50);
+}
+function random_y() {
+  return rand.numb2(20,50);
+}
 
 async function initMap() {
     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
@@ -10,8 +40,7 @@ const {YMap, YMapDefaultSchemeLayer} = ymaps3;
           document.getElementById('map'),
           {
               location: {
-                  center: [37.588144, 55.733842],
-                  duration: 200,
+                  center: [random_x(), random_y()],
                   zoom: 10
               }
           }
