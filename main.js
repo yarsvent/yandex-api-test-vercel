@@ -6,24 +6,17 @@ const {YMap, YMapDefaultSchemeLayer} = ymaps3;
     await ymaps3.ready.then(init);
 
     function init() {
-      // Иницилиазируем карту
       const map = new YMap(
-          // Передаём ссылку на HTMLElement контейнера
           document.getElementById('map'),
-
-          // Передаём параметры инициализации карты
           {
               location: {
-                  // Координаты центра карты
-                  center: [37.588144, 55.733842],
-
-                  // Уровень масштабирования
-                  zoom: 10
+                  //center: [37.588144, 55.733842],
+                  bounds: [[-0.118092, 51.509865], [-0.118092, 51.509865]],
+                  zoom: 15
               }
           }
       );
 
-      // Добавляем слой для отображения схематической карты
       const layer = new ymaps3.YMapDefaultSchemeLayer();
       map.addChild(layer);
     }
