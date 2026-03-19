@@ -71,8 +71,7 @@ function initMap() {
         getParent: function () { return this._parent; },
         _onClick: function (e) {
             let coords = e.get('coords');
-            //this._parent.getMap().setCenter(coords);
-            answerPanorama(coords);
+            placeAnswer(coords);
         }
     };
     ymaps.behavior.storage.add('mybehavior', MyBehavior);
@@ -120,6 +119,7 @@ function nextLocation() {
   let t_coords = rand.list(LOCATION_DATA.moscow);
 
   answered = false;
+  document.getElementById("guessButton").innerHTML = "Проверить";
 
   if (!!panoramaPlacemark) myMap.geoObjects.remove(panoramaPlacemark);
   if (!!answerPlacemark) myMap.geoObjects.remove(answerPlacemark);
@@ -143,7 +143,10 @@ function nextLocation() {
 }
 
 function answerPanorama() {
-  if (answered) return;
+  if (answered) {
+    nextLocation();
+    return;
+  };
   answered = true;
 
   myMap.setCenter(answerCoords);
@@ -184,6 +187,8 @@ function answerPanorama() {
   let t_map = document.getElementById("mapContainer");
   t_map.style.width = "98%";
   t_map.style.height = "95%";
+
+  document.getElementById("guessButton").innerHTML = "Следующая локация";
 }
 
 function placeAnswer(coords) {
