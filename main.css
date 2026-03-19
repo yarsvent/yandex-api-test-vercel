@@ -21,6 +21,7 @@ body {
   width: 100%;
   height: 15%;
   text-align: center;
+  border: none;
 }
 #panoramaDisplay {
   background-color: blue;
@@ -60,4 +61,8 @@ button {
   background-color: white;
   border-radius: 0.25rem;
   font-size: 21px;
+}
+button:hover {
+  background-color: lightblue;
+  transition: all 0.2s;
 }
