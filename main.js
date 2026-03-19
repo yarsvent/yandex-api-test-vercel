@@ -77,7 +77,7 @@ function displayPanorama(x, y) {
 function nextLocation() {
   let t_coords = [random_x(), random_y()];
 
-  displayPanorama(t_coords);
+  displayPanorama(t_coords[0], t_coords[1]);
 }
 
 // OLD V3 Code
