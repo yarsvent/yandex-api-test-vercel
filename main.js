@@ -21,8 +21,6 @@ var rand = {};
     return Math.random() * (max - min) + min;
   }
 
-setTimeout(initMap, 1);
-
 function random_x() {
   return rand.numb2(20,70);
 }
@@ -30,6 +28,23 @@ function random_y() {
   return rand.numb2(20,40);
 }
 
+ymaps.ready(init);
+function init(){
+        // Создание карты.
+        var myMap = new ymaps.Map("map", {
+            // Координаты центра карты.
+            // Порядок по умолчанию: «широта, долгота».
+            // Чтобы не определять координаты центра карты вручную,
+            // воспользуйтесь инструментом Определение координат.
+            center: [55.76, 37.64],
+            // Уровень масштабирования. Допустимые значения:
+            // от 0 (весь мир) до 19.
+            zoom: 7
+        });
+    }
+// OLD V3 Code
+/*
+setTimeout(initMap, 1);
 async function initMap() {
     const {YMap, YMapDefaultSchemeLayer} = ymaps3;
     await ymaps3.ready.then(init);
@@ -47,17 +62,17 @@ async function initMap() {
 
       const layer = new ymaps3.YMapDefaultSchemeLayer({
         customization: [
-          /*{
-            tags: {
-              any: ['industrial']
-            },
-            elements: 'geometry.fill',
-            stylers: [
-              {
-                color: '#CC0000'
-              }
-            ]
-          }*/
+          //{
+          //  tags: {
+          //    any: ['industrial']
+          //  },
+          //  elements: 'geometry.fill',
+          //  stylers: [
+          //    {
+          //      color: '#CC0000'
+          //    }
+          //  ]
+          //}
         ]
       });
       map.addChild(layer);
@@ -80,4 +95,4 @@ async function initMap() {
       map
         .addChild(marker);
     }
-}
+}*/
