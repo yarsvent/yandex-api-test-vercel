@@ -48,6 +48,7 @@ function initMap() {
     myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
     myMap.controls.remove('rulerControl'); // удаляем контрол линейки
     //myMap.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+
   }
 }
 
@@ -88,6 +89,7 @@ function nextLocation() {
           coordinates: t_coords
       }
   });
+  myMap.geoObjects.add(panoramaPlacemark);
 
   displayPanorama(t_coords[0], t_coords[1]);
 }
