@@ -127,6 +127,7 @@ function nextLocation() {
 
   answered = false;
   document.getElementById("guessButton").innerHTML = "Проверить";
+  document.getElementById("locationPopup").innerHTML = "";
 
   gameRound++;
   document.getElementById("roundInfo").innerHTML = "Раунд "+gameRound;
@@ -185,15 +186,18 @@ function answerPanorama() {
 
   let t_answer = haversineDistanceKM(answerCoords[0],answerCoords[1],panoramaCoords[0],panoramaCoords[1]);
   if (t_answer >= 1) {
-    let t_answer_display = t_answer.toFixed(1);
-    alert('Расстояние до места: '+t_answer_display+' километра.');
+    let t_answer_display = t_answer.toFixed(1)+" километров";
+    //alert('Расстояние до места: '+t_answer_display+' километра.');
   }
   else {
-    let t_answer_display = Math.floor(t_answer/1000);
-    alert('Расстояние до места: '+t_answer+' метров.');
+    let t_answer_display = Math.floor(t_answer/1000)+" метров";
+    //alert('Расстояние до места: '+t_answer_display+' метров.');
   }
-  answerScore += 2000 * Math.exp(-0.5*Math.pow(t_answer/750, 2));
+  let t_score_round = Math.round(2000 * Math.exp(-0.5*Math.pow(t_answer/750, 2)));
+  answerScore += t_score_round;
   document.getElementById("score").innerHTML = "Очков: "+answerScore;
+
+  document.getElementById("locationPopup").innerHTML = "<h1>"+t_score_round+" ОЧКОВ<br>"+t_answer_display+" до места</h1>";
 
   let t_map = document.getElementById("mapContainer");
   t_map.style.width = "98%";

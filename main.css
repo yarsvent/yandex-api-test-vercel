@@ -42,7 +42,14 @@ body {
   height: 100%;
 }
 .infoSpan {
-  font-size: 22px;
+  font-size: 25px;
+}
+#locationPopup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0.75;
 }
 #panoramaDisplay {
   background-color: blue;
