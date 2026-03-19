@@ -20,10 +20,11 @@ body {
   z-index: 8;
 }
 #guessButton {
-  width: 100%;
-  height: 15%;
+  width: 19%;
+  height: 14%;
   text-align: center;
   border: none;
+  margin: 0 auto;
 }
 #panoramaDisplay {
   background-color: blue;
