@@ -45,3 +45,10 @@ body {
   border: 2px solid lightblue;
   transition: all 0.2s;
 }
+button {
+  min-width: 3rem;
+  padding: 0.25rem;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 0.125rem;
+}
