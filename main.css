@@ -4,15 +4,21 @@
 body {
   font-family: Arial;
 }
-.map {
+#mapContainer {
   position: absolute;
   right: 1rem;
   bottom: 1rem;
+}
+.map {
   background-color: blue;
   border: 1px solid black;
   width: 32%;
   height: 32%;
   z-index: 8;
+}
+#guessButton {
+  width: 100%;
+  text-align: center;
 }
 #panoramaDisplay {
   background-color: blue;

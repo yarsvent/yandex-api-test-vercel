@@ -137,15 +137,14 @@ function nextLocation() {
 
   displayPanorama(t_coords[0], t_coords[1]);
 
-  let t_map = document.getElementById("map");
+  let t_map = document.getElementById("mapContainer");
   t_map.style.width = "32%";
   t_map.style.height = "32%";
 }
 
-function answerPanorama(coords) {
+function answerPanorama() {
   if (answered) return;
   answered = true;
-  answerCoords = coords;
 
   myMap.setCenter(answerCoords);
   answerLine = new ymaps.GeoObject({
@@ -161,15 +160,6 @@ function answerPanorama(coords) {
   });
   myMap.geoObjects.add(answerLine);
 
-  answerPlacemark = new ymaps.GeoObject({
-      geometry: {
-          type: "Point",
-          coordinates: coords
-      }
-  }, {
-    preset: 'islands#blueCircleDotIcon'
-  });
-  myMap.geoObjects.add(answerPlacemark);
   panoramaPlacemark = new ymaps.GeoObject({
       geometry: {
           type: "Point",
@@ -191,9 +181,24 @@ function answerPanorama(coords) {
   }
   answerScore += 2000 * Math.exp(-0.5*Math.pow(t_answer/750, 2));
 
-  let t_map = document.getElementById("map");
+  let t_map = document.getElementById("mapContainer");
   t_map.style.width = "98%";
   t_map.style.height = "95%";
+}
+
+function placeAnswer(coords) {
+  if (answered) return;
+
+  answerCoords = coords;
+  answerPlacemark = new ymaps.GeoObject({
+      geometry: {
+          type: "Point",
+          coordinates: coords
+      }
+  }, {
+    preset: 'islands#blueCircleDotIcon'
+  });
+  myMap.geoObjects.add(answerPlacemark);
 }
 
 function haversineDistanceKM(lat1Deg, lon1Deg, lat2Deg, lon2Deg) {
