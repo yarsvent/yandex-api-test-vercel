@@ -39,7 +39,8 @@ function initMap() {
       }, {
         yandexMapDisablePoiInteractivity: true,
         yandexMapType : "future_map",
-        dragCursor: "crosshair"
+        dragCursor: "crosshair",
+        autoFitToViewport : "always"
       }
     );
     myMap.controls.remove('geolocationControl'); // удаляем геолокацию
@@ -81,6 +82,7 @@ function initMap() {
 
 let panoramaPlacemark;
 let panoramaCoords;
+let panoramaPlayer;
 let answerPlacemark;
 let answerCoords;
 let answerLine;
@@ -94,22 +96,18 @@ function displayPanorama(x, y) {
   // Функция ymaps.panorama.locate возвращает Promise-объект,
   // который разрешится массивом с найденной панорамой либо пустым
   // массивом, если в окрестностях точки панорам не нашлось.
+  if (panoramaPlayer) panoramaPlayer.destroy();
   locateRequest.then(
     function (panoramas) {
       if (panoramas.length) {
         // Создание на странице плеера панорам.
-        var player = new ymaps.panorama.Player('panoramaDisplay', panoramas[0], {
+        panoramaPlayer = new ymaps.panorama.Player('panoramaDisplay', panoramas[0], {
               // Опции панорамы.
               // direction - направление взгляда.
               direction: 'auto',
               hotkeysEnabled : false,
               suppressMapOpenBlock : true,
               controls : []
-        });
-        player.events.add(["panoramachange"], function (e) {
-          const panorama = player.getPanorama();
-          panorama.setMarkers([]);
-          player.setPanorama(panorama);
         });
       } else {
         console.log("В заданной точке нет панорам.");
