@@ -118,6 +118,9 @@ function displayPanorama(x, y) {
 function nextLocation() {
   let t_coords = rand.list(LOCATION_DATA.moscow);
 
+  if (!!panoramaPlacemark) myMap.geoObjects.remove(panoramaPlacemark);
+  if (!!answerPlacemark) myMap.geoObjects.remove(answerPlacemark);
+
   panoramaPlacemark = new ymaps.GeoObject({
       geometry: {
           type: "Point",
@@ -139,8 +142,16 @@ function answerPanorama(coords) {
           coordinates: coords
       }
   });
+  myMap.geoObjects.add(answerPlacemark);
   let t_answer = haversineDistanceKM(answerCoords[0],answerCoords[1],panoramaCoords[0],panoramaCoords[1]);
-  alert('Расстояние до места: '+t_answer+' km');
+  if (t_answer >= 1) {
+    let t_answer_display = t_answer.toFixed(1);
+    alert('Расстояние до места: '+t_answer_display+' километра.');
+  }
+  else {
+    let t_answer_display = Math.floor(t_answer/1000);
+    alert('Расстояние до места: '+t_answer+' метра.');
+  }
 }
 
 function haversineDistanceKM(lat1Deg, lon1Deg, lat2Deg, lon2Deg) {
