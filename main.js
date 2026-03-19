@@ -194,7 +194,7 @@ function answerPanorama() {
     t_answer_display = Math.floor(t_answer/1000)+" метров";
     //alert('Расстояние до места: '+t_answer_display+' метров.');
   }
-  let t_score_round = Math.round( (10000 * Math.exp(-0.5*Math.pow(t_answer/750, 2)))/5 );
+  let t_score_round = Math.round( 2000 * Math.exp(-Math.pow(t_answer/1000, 1)) );
   answerScore += t_score_round;
   document.getElementById("score").innerHTML = "Очков: "+answerScore;
 
