@@ -30,5 +30,5 @@ body {
 .marker-class:hover {
   opacity: 1;
   border: 2px solid lightblue;
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
