@@ -38,7 +38,8 @@ function initMap() {
         zoom: 7
       }, {
         yandexMapDisablePoiInteractivity: true,
-        yandexMapType : "future_map"
+        yandexMapType : "future_map",
+        dragCursor: "crosshair"
       }
     );
     myMap.controls.remove('geolocationControl'); // удаляем геолокацию
@@ -68,8 +69,9 @@ function initMap() {
         setParent: function (parent) { this._parent = parent; },
         getParent: function () { return this._parent; },
         _onClick: function (e) {
-            var coords = e.get('coords');
-            this._parent.getMap().setCenter(coords);
+            let coords = e.get('coords');
+            //this._parent.getMap().setCenter(coords);
+            answerPanorama(coords);
         }
     };
     ymaps.behavior.storage.add('mybehavior', MyBehavior);
@@ -78,6 +80,9 @@ function initMap() {
 }
 
 let panoramaPlacemark;
+let answerPlacemark;
+let panoramaCoords;
+let answerCoords;
 
 function displayPanorama(x, y) {
   // Получение объекта Panorama.
@@ -120,8 +125,45 @@ function nextLocation() {
       }
   });
   myMap.geoObjects.add(panoramaPlacemark);
+  panoramaCoords = t_coords;
+  answerCoords = t_coords;
 
   displayPanorama(t_coords[0], t_coords[1]);
+}
+
+function answerPanorama(coords) {
+  answerCoords = coords;
+  answerPlacemark = new ymaps.GeoObject({
+      geometry: {
+          type: "Point",
+          coordinates: coords
+      }
+  });
+  let t_answer = haversineDistanceKM(answerCoords[0],answerCoords[1],panoramaCoords[0],panoramaCoords[1]);
+  alert('Расстояние до места: '+t_answer+' km');
+}
+
+function haversineDistanceKM(lat1Deg, lon1Deg, lat2Deg, lon2Deg) {
+    function toRad(degree) {
+        return degree * Math.PI / 180;
+    }
+
+    const lat1 = toRad(lat1Deg);
+    const lon1 = toRad(lon1Deg);
+    const lat2 = toRad(lat2Deg);
+    const lon2 = toRad(lon2Deg);
+
+    const { sin, cos, sqrt, atan2 } = Math;
+
+    const R = 6371; // earth radius in km
+    const dLat = lat2 - lat1;
+    const dLon = lon2 - lon1;
+    const a = sin(dLat / 2) * sin(dLat / 2)
+            + cos(lat1) * cos(lat2)
+            * sin(dLon / 2) * sin(dLon / 2);
+    const c = 2 * atan2(sqrt(a), sqrt(1 - a));
+    const d = R * c;
+    return d; // distance in km
 }
 
 // OLD V3 Code
