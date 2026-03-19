@@ -50,6 +50,30 @@ function initMap() {
     myMap.controls.remove('rulerControl'); // удаляем контрол линейки
     //myMap.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
 
+    function MyBehavior() {
+    // Определим свойства класса
+    this.options = new ymaps.option.Manager(); // Менеджер опций
+    this.events = new ymaps.event.Manager(); // Менеджер событий
+    }
+
+    // Определим методы.
+    MyBehavior.prototype = {
+        constructor: MyBehavior,
+        enable: function () {
+            this._parent.getMap().events.add('click', this._onClick, this);
+        },
+        disable: function () {
+            this._parent.getMap().events.remove('click', this._onClick, this);
+        },
+        setParent: function (parent) { this._parent = parent; },
+        getParent: function () { return this._parent; },
+        _onClick: function (e) {
+            var coords = e.get('coords');
+            this._parent.getMap().setCenter(coords);
+        }
+    };
+    ymaps.behavior.storage.add('mybehavior', MyBehavior);
+    myMap.behaviors.enable('mybehavior');
   }
 }
 
@@ -73,7 +97,12 @@ function displayPanorama(x, y) {
               hotkeysEnabled : false,
               suppressMapOpenBlock : true,
               controls : []
-            });
+        });
+        player.events.add(["panoramachange"], function (e) {
+          const panorama = player.getPanorama();
+          panorama.setMarkers([]);
+          player.setPanorama(panorama);
+        });
       } else {
         console.log("В заданной точке нет панорам.");
       }
