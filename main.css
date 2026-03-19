@@ -28,6 +28,9 @@ body {
 #roundInfo {
   margin-inline: 1rem;
 }
+#endWindow {
+  display: none;
+}
 #gameField {
   display: none;
 }

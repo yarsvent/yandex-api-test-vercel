@@ -122,7 +122,20 @@ function startGame() {
   nextLocation();
 }
 
+function finishGame() {
+  document.getElementById('gameField').style.display = 'none';
+  if (panoramaPlayer && panoramaPlayer._engine) panoramaPlayer.destroy();
+  document.getElementById('endWindow').style.display = 'inline-block';
+
+  document.getElementById('endWindow').innerHTML = '<h1>Поздравляю с прохождением!</h1><h2>Вы набрали: '+answerScore+'/10000 очков.</h2>';
+}
+
 function nextLocation() {
+  if (gameRound == 5) {
+    finishGame();
+    return;
+  }
+
   let t_coords = rand.list(LOCATION_DATA.world);
 
   answered = false;
