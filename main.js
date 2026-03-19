@@ -195,6 +195,7 @@ function placeAnswer(coords) {
   if (answered) return;
 
   answerCoords = coords;
+  if (!!answerPlacemark) myMap.geoObjects.remove(answerPlacemark);
   answerPlacemark = new ymaps.GeoObject({
       geometry: {
           type: "Point",
