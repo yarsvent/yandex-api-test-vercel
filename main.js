@@ -29,10 +29,11 @@ function random_y() {
 }
 
 setTimeout(initMap, 1);
+let myMap;
 function initMap() {
   ymaps.ready(init);
   function init() {
-    var myMap = new ymaps.Map("map", {
+    myMap = new ymaps.Map("map", {
         center: [55.76, 37.64],
         zoom: 7
       }, {
