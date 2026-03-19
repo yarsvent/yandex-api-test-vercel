@@ -42,10 +42,33 @@ function initMap() {
     myMap.controls.remove('trafficControl'); // удаляем контроль трафика
     myMap.controls.remove('typeSelector'); // удаляем тип
     myMap.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
-    myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
-    myMap.controls.remove('rulerControl'); // удаляем контрол правил
+    //myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
+    myMap.controls.remove('rulerControl'); // удаляем контрол линейки
     myMap.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
   }
+}
+
+function displayPanorama() {
+  // Получение объекта Panorama.
+  var locateRequest = ymaps.panorama.locate([55.83403, 37.623370]);
+
+  // Функция ymaps.panorama.locate возвращает Promise-объект,
+  // который разрешится массивом с найденной панорамой либо пустым
+  // массивом, если в окрестностях точки панорам не нашлось.
+  locateRequest.then(
+    function (panoramas) {
+      if (panoramas.length) {
+        // Создание на странице плеера панорам.
+        var player = new ymaps.panorama.Player('panoramaDisplay', panoramas[0], {
+              // Опции панорамы.
+              // direction - направление взгляда.
+              direction: [0, -50]
+            });
+      } else {
+        console.log("В заданной точке нет панорам.");
+      }
+    }
+  );
 }
 
 // OLD V3 Code
