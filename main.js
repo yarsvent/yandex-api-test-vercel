@@ -34,12 +34,12 @@ function initMap() {
   function init() {
     var myMap = new ymaps.Map("map", {
         center: [55.76, 37.64],
-        options : {
-          yandexMapDisablePoiInteractivity: true,
-          yandexMapType : "future_map"
-        },
         zoom: 7
-    });
+      }, {
+        yandexMapDisablePoiInteractivity: true,
+        yandexMapType : "future_map"
+      }
+    );
     myMap.controls.remove('geolocationControl'); // удаляем геолокацию
     myMap.controls.remove('searchControl'); // удаляем поиск
     myMap.controls.remove('trafficControl'); // удаляем контроль трафика
