@@ -35,7 +35,7 @@ function initMap() {
   function init() {
     myMap = new ymaps.Map("map", {
         center: [55.76, 37.64],
-        zoom: 2
+        zoom: 4
       }, {
         yandexMapDisablePoiInteractivity: true,
         yandexMapType : "future_map",
@@ -123,7 +123,7 @@ function startGame() {
 }
 
 function nextLocation() {
-  let t_coords = rand.list(LOCATION_DATA.moscow);
+  let t_coords = rand.list(LOCATION_DATA.world);
 
   answered = false;
   document.getElementById("guessButton").innerHTML = "Проверить";
@@ -133,7 +133,7 @@ function nextLocation() {
   document.getElementById("roundInfo").innerHTML = "Раунд "+gameRound;
 
   myMap.setCenter([55.76, 37.64]);
-  myMap.setZoom(2);
+  myMap.setZoom(4);
 
   if (!!panoramaPlacemark) myMap.geoObjects.remove(panoramaPlacemark);
   if (!!answerPlacemark) myMap.geoObjects.remove(answerPlacemark);
