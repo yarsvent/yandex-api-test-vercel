@@ -166,6 +166,8 @@ function answerPanorama(coords) {
           type: "Point",
           coordinates: coords
       }
+  }, {
+    preset: 'islands#blueCircleDotIcon'
   });
   myMap.geoObjects.add(answerPlacemark);
   panoramaPlacemark = new ymaps.GeoObject({
@@ -174,7 +176,7 @@ function answerPanorama(coords) {
           coordinates: panoramaCoords
       }
   }, {
-    fillColor: '00ffff99'
+    preset : 'islands#darkGreenCircleDotIcon'
   });
   myMap.geoObjects.add(panoramaPlacemark);
 
