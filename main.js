@@ -85,6 +85,7 @@ let answerPlacemark;
 let answerCoords;
 let answerLine;
 let answered = false;
+let answerScore = 0;
 
 function displayPanorama(x, y) {
   // Получение объекта Panorama.
@@ -137,6 +138,10 @@ function nextLocation() {
   answerCoords = t_coords;
 
   displayPanorama(t_coords[0], t_coords[1]);
+
+  let t_map = document.getElementById("map");
+  t_map.style.width = "32%";
+  t_map.style.height = "32%";
 }
 
 function answerPanorama(coords) {
@@ -184,6 +189,11 @@ function answerPanorama(coords) {
     let t_answer_display = Math.floor(t_answer/1000);
     alert('Расстояние до места: '+t_answer+' метров.');
   }
+  answerScore += 2000 * Math.exp(-0.5*Math.pow(t_answer/750, 2));
+
+  let t_map = document.getElementById("map");
+  t_map.style.width = "95%";
+  t_map.style.height = "95%";
 }
 
 function haversineDistanceKM(lat1Deg, lon1Deg, lat2Deg, lon2Deg) {
