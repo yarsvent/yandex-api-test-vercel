@@ -80,9 +80,10 @@ function initMap() {
 }
 
 let panoramaPlacemark;
-let answerPlacemark;
 let panoramaCoords;
+let answerPlacemark;
 let answerCoords;
+let answerLine;
 
 function displayPanorama(x, y) {
   // Получение объекта Panorama.
@@ -120,6 +121,7 @@ function nextLocation() {
 
   if (!!panoramaPlacemark) myMap.geoObjects.remove(panoramaPlacemark);
   if (!!answerPlacemark) myMap.geoObjects.remove(answerPlacemark);
+  if (!!answerLine) myMap.geoObjects.remove(answerLine);
 
   panoramaPlacemark = new ymaps.GeoObject({
       geometry: {
@@ -152,6 +154,17 @@ function answerPanorama(coords) {
     let t_answer_display = Math.floor(t_answer/1000);
     alert('Расстояние до места: '+t_answer+' метра.');
   }
+
+  answerLine = new ymaps.GeoObject({
+    geometry: {
+        type: "LineString",
+        coordinates: [
+            answerCoords,
+            panoramaCoords
+        ]
+    }
+  });
+  myMap.geoObjects.add(answerLine);
 }
 
 function haversineDistanceKM(lat1Deg, lon1Deg, lat2Deg, lon2Deg) {
