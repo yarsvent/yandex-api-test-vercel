@@ -117,7 +117,7 @@ function displayPanorama(x, y) {
 }
 
 function startGame() {
-  document.getElementById('startButton').style.display = 'none';
+  document.getElementById('startWindow').style.display = 'none';
   document.getElementById('gameField').style.display = 'inline-block';
   nextLocation();
 }

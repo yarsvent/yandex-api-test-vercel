@@ -32,6 +32,11 @@ body {
 #gameField {
   display: none;
 }
+#startWindow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #startButton {
   width: 50%;
   height: 20%;
