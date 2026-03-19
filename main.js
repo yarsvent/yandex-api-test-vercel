@@ -34,7 +34,10 @@ function initMap() {
   function init() {
     var myMap = new ymaps.Map("map", {
         center: [55.76, 37.64],
-        yandexMapDisablePoiInteractivity: true,
+        options : {
+          yandexMapDisablePoiInteractivity: true,
+          yandexMapType : "future_map"
+        },
         zoom: 7
     });
     myMap.controls.remove('geolocationControl'); // удаляем геолокацию
