@@ -65,7 +65,10 @@ function displayPanorama(x, y) {
         var player = new ymaps.panorama.Player('panoramaDisplay', panoramas[0], {
               // Опции панорамы.
               // direction - направление взгляда.
-              direction: [0, -50]
+              direction: 'auto',
+              hotkeysEnabled : false,
+              suppressMapOpenBlock : true,
+              controls : []
             });
       } else {
         console.log("В заданной точке нет панорам.");
