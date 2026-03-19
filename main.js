@@ -160,6 +160,8 @@ function answerPanorama() {
   };
   answered = true;
 
+  if (panoramaPlayer) panoramaPlayer.destroy();
+
   myMap.setCenter(panoramaCoords);
   answerLine = new ymaps.GeoObject({
     geometry: {

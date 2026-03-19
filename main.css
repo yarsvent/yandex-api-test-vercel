@@ -61,8 +61,6 @@ body {
   padding: 1rem;
 }
 #panoramaDisplay {
-  background-color: blue;
-  border: 1px solid black;
   width: auto;
   height: 95%;
   z-index: 7;
