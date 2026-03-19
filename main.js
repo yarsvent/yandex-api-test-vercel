@@ -168,7 +168,7 @@ function answerPanorama(coords) {
   panoramaPlacemark = new ymaps.GeoObject({
       geometry: {
           type: "Point",
-          coordinates: t_coords
+          coordinates: panoramaCoords
       }
   }, {
     fillColor: '#FF0000'
