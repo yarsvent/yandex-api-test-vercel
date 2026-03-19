@@ -174,7 +174,7 @@ function answerPanorama(coords) {
           coordinates: panoramaCoords
       }
   }, {
-    fillColor: '#FF0000'
+    fillColor: '00ffff99'
   });
   myMap.geoObjects.add(panoramaPlacemark);
 
@@ -190,7 +190,7 @@ function answerPanorama(coords) {
   answerScore += 2000 * Math.exp(-0.5*Math.pow(t_answer/750, 2));
 
   let t_map = document.getElementById("map");
-  t_map.style.width = "95%";
+  t_map.style.width = "98%";
   t_map.style.height = "95%";
 }
 
