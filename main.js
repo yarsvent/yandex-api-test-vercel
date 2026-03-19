@@ -185,12 +185,13 @@ function answerPanorama() {
   myMap.geoObjects.add(panoramaPlacemark);
 
   let t_answer = haversineDistanceKM(answerCoords[0],answerCoords[1],panoramaCoords[0],panoramaCoords[1]);
+  let t_answer_display;
   if (t_answer >= 1) {
-    let t_answer_display = t_answer.toFixed(1)+" километров";
+    t_answer_display = t_answer.toFixed(1)+" километров";
     //alert('Расстояние до места: '+t_answer_display+' километра.');
   }
   else {
-    let t_answer_display = Math.floor(t_answer/1000)+" метров";
+    t_answer_display = Math.floor(t_answer/1000)+" метров";
     //alert('Расстояние до места: '+t_answer_display+' метров.');
   }
   let t_score_round = Math.round(2000 * Math.exp(-0.5*Math.pow(t_answer/750, 2)));
