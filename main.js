@@ -22,10 +22,10 @@ var rand = {};
   }
 
 function random_x() {
-  return rand.numb2(20,70);
+  return rand.numb2(37.323534155040264,37.930571172086076);
 }
 function random_y() {
-  return rand.numb2(20,40);
+  return rand.numb2(55.944811001873,55.578215891268236);
 }
 
 setTimeout(initMap, 1);
@@ -51,9 +51,9 @@ function initMap() {
   }
 }
 
-function displayPanorama() {
+function displayPanorama(x, y) {
   // Получение объекта Panorama.
-  var locateRequest = ymaps.panorama.locate([55.83403, 37.623370]);
+  var locateRequest = ymaps.panorama.locate([x || 55.83403, y || 37.623370]);
 
   // Функция ymaps.panorama.locate возвращает Promise-объект,
   // который разрешится массивом с найденной панорамой либо пустым
@@ -75,7 +75,9 @@ function displayPanorama() {
 }
 
 function nextLocation() {
+  let t_coords = [random_x(), random_y()];
 
+  displayPanorama(t_coords);
 }
 
 // OLD V3 Code
