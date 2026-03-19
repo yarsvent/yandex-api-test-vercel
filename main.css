@@ -26,6 +26,17 @@ body {
   border: none;
   border-radius: 0;
 }
+#roundInfo {
+  margin-inline: 1rem;
+}
+#gameField {
+  display: none;
+}
+#startButton {
+  width: 50%;
+  height: 20%;
+  margin: 0 auto;
+}
 #panoramaDisplay {
   background-color: blue;
   border: 1px solid black;

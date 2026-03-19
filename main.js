@@ -87,6 +87,7 @@ let answerCoords;
 let answerLine;
 let answered = false;
 let answerScore = 0;
+let gameRound = 0;
 
 function displayPanorama(x, y) {
   // Получение объекта Panorama.
@@ -115,11 +116,20 @@ function displayPanorama(x, y) {
   );
 }
 
+function startGame() {
+  document.getElementById('startButton').style.display = 'none';
+  document.getElementById('gameField').style.display = 'inline-block';
+  nextLocation();
+}
+
 function nextLocation() {
   let t_coords = rand.list(LOCATION_DATA.moscow);
 
   answered = false;
   document.getElementById("guessButton").innerHTML = "Проверить";
+
+  gameRound++;
+  document.getElementById("roundInfo").innerHTML = "Раунд "+gameRound;
 
   if (!!panoramaPlacemark) myMap.geoObjects.remove(panoramaPlacemark);
   if (!!answerPlacemark) myMap.geoObjects.remove(answerPlacemark);
@@ -183,6 +193,7 @@ function answerPanorama() {
     alert('Расстояние до места: '+t_answer+' метров.');
   }
   answerScore += 2000 * Math.exp(-0.5*Math.pow(t_answer/750, 2));
+  document.getElementById("score").innerHTML = "Очков: "+answerScore;
 
   let t_map = document.getElementById("mapContainer");
   t_map.style.width = "98%";
