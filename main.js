@@ -149,7 +149,7 @@ function answerPanorama() {
   };
   answered = true;
 
-  myMap.setCenter(answerCoords);
+  myMap.setCenter(panoramaCoords);
   answerLine = new ymaps.GeoObject({
     geometry: {
         type: "LineString",
