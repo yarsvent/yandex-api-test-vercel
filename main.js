@@ -51,6 +51,8 @@ function initMap() {
   }
 }
 
+let panoramaPlacemark;
+
 function displayPanorama(x, y) {
   // Получение объекта Panorama.
   var locateRequest = ymaps.panorama.locate([x || 55.83403, y || 37.623370]);
@@ -79,6 +81,13 @@ function displayPanorama(x, y) {
 
 function nextLocation() {
   let t_coords = rand.list(LOCATION_DATA.moscow);
+
+  panoramaPlacemark = new ymaps.GeoObject({
+      geometry: {
+          type: "Point",
+          coordinates: t_coords
+      }
+  });
 
   displayPanorama(t_coords[0], t_coords[1]);
 }
