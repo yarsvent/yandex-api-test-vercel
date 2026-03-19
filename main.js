@@ -84,6 +84,7 @@ let panoramaCoords;
 let answerPlacemark;
 let answerCoords;
 let answerLine;
+let answered = false;
 
 function displayPanorama(x, y) {
   // Получение объекта Panorama.
@@ -119,17 +120,19 @@ function displayPanorama(x, y) {
 function nextLocation() {
   let t_coords = rand.list(LOCATION_DATA.moscow);
 
+  answered = false;
+
   if (!!panoramaPlacemark) myMap.geoObjects.remove(panoramaPlacemark);
   if (!!answerPlacemark) myMap.geoObjects.remove(answerPlacemark);
   if (!!answerLine) myMap.geoObjects.remove(answerLine);
 
-  panoramaPlacemark = new ymaps.GeoObject({
-      geometry: {
-          type: "Point",
-          coordinates: t_coords
-      }
-  });
-  myMap.geoObjects.add(panoramaPlacemark);
+  //panoramaPlacemark = new ymaps.GeoObject({
+  //    geometry: {
+  //        type: "Point",
+  //        coordinates: t_coords
+  //    }
+  //});
+  //myMap.geoObjects.add(panoramaPlacemark);
   panoramaCoords = t_coords;
   answerCoords = t_coords;
 
@@ -137,24 +140,11 @@ function nextLocation() {
 }
 
 function answerPanorama(coords) {
+  if (answered) return;
+  answered = true;
   answerCoords = coords;
-  answerPlacemark = new ymaps.GeoObject({
-      geometry: {
-          type: "Point",
-          coordinates: coords
-      }
-  });
-  myMap.geoObjects.add(answerPlacemark);
-  let t_answer = haversineDistanceKM(answerCoords[0],answerCoords[1],panoramaCoords[0],panoramaCoords[1]);
-  if (t_answer >= 1) {
-    let t_answer_display = t_answer.toFixed(1);
-    alert('Расстояние до места: '+t_answer_display+' километра.');
-  }
-  else {
-    let t_answer_display = Math.floor(t_answer/1000);
-    alert('Расстояние до места: '+t_answer+' метра.');
-  }
 
+  myMap.setCenter(answerCoords);
   answerLine = new ymaps.GeoObject({
     geometry: {
         type: "LineString",
@@ -163,8 +153,37 @@ function answerPanorama(coords) {
             panoramaCoords
         ]
     }
+  }, {
+    strokeWidth: 4
   });
   myMap.geoObjects.add(answerLine);
+
+  answerPlacemark = new ymaps.GeoObject({
+      geometry: {
+          type: "Point",
+          coordinates: coords
+      }
+  });
+  myMap.geoObjects.add(answerPlacemark);
+  panoramaPlacemark = new ymaps.GeoObject({
+      geometry: {
+          type: "Point",
+          coordinates: t_coords
+      }
+  }, {
+    fillColor: '#FF0000'
+  });
+  myMap.geoObjects.add(panoramaPlacemark);
+
+  let t_answer = haversineDistanceKM(answerCoords[0],answerCoords[1],panoramaCoords[0],panoramaCoords[1]);
+  if (t_answer >= 1) {
+    let t_answer_display = t_answer.toFixed(1);
+    alert('Расстояние до места: '+t_answer_display+' километра.');
+  }
+  else {
+    let t_answer_display = Math.floor(t_answer/1000);
+    alert('Расстояние до места: '+t_answer+' метров.');
+  }
 }
 
 function haversineDistanceKM(lat1Deg, lon1Deg, lat2Deg, lon2Deg) {
