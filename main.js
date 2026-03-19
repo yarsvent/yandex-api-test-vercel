@@ -96,7 +96,7 @@ function displayPanorama(x, y) {
   // Функция ymaps.panorama.locate возвращает Promise-объект,
   // который разрешится массивом с найденной панорамой либо пустым
   // массивом, если в окрестностях точки панорам не нашлось.
-  if (panoramaPlayer) panoramaPlayer.destroy();
+  if (panoramaPlayer && panoramaPlayer._engine) panoramaPlayer.destroy();
   locateRequest.then(
     function (panoramas) {
       if (panoramas.length) {
@@ -160,7 +160,7 @@ function answerPanorama() {
   };
   answered = true;
 
-  if (panoramaPlayer) panoramaPlayer.destroy();
+  if (panoramaPlayer && panoramaPlayer._engine) panoramaPlayer.destroy();
 
   myMap.setCenter(panoramaCoords);
   answerLine = new ymaps.GeoObject({
