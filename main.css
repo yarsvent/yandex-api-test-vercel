@@ -6,8 +6,8 @@ body {
 }
 .map {
   position: absolute;
-  left: 70%;
-  bottom: 0;
+  right: 1rem;
+  bottom: 1rem;
   background-color: blue;
   border: 1px solid black;
   width: 28%;
@@ -20,6 +20,7 @@ body {
   width: auto;
   height: 95%;
   z-index: 7;
+  margin-top: 1rem;
 }
 .marker-class {
   --markerWidth: 6rem;
