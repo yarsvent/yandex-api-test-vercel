@@ -35,7 +35,7 @@ function initMap() {
   function init() {
     myMap = new ymaps.Map("map", {
         center: [55.76, 37.64],
-        zoom: 7
+        zoom: 2
       }, {
         yandexMapDisablePoiInteractivity: true,
         yandexMapType : "future_map",
@@ -132,6 +132,9 @@ function nextLocation() {
   gameRound++;
   document.getElementById("roundInfo").innerHTML = "Раунд "+gameRound;
 
+  myMap.setCenter([55.76, 37.64]);
+  myMap.setZoom();
+
   if (!!panoramaPlacemark) myMap.geoObjects.remove(panoramaPlacemark);
   if (!!answerPlacemark) myMap.geoObjects.remove(answerPlacemark);
   if (!!answerLine) myMap.geoObjects.remove(answerLine);
@@ -200,7 +203,7 @@ function answerPanorama() {
   answerScore += t_score_round;
   document.getElementById("score").innerHTML = "Очков: "+answerScore;
 
-  document.getElementById("locationPopup").innerHTML = "<h1>"+t_score_round+" ОЧКОВ<br>"+t_answer_display+" до места</h1>";
+  document.getElementById("locationPopup").innerHTML = "<h1>"+t_score_round+" ОЧКОВ<br>"+t_answer_display+" от места</h1>";
 
   let t_map = document.getElementById("mapContainer");
   t_map.style.width = "98%";
