@@ -133,7 +133,7 @@ function nextLocation() {
   document.getElementById("roundInfo").innerHTML = "Раунд "+gameRound;
 
   myMap.setCenter([55.76, 37.64]);
-  myMap.setZoom();
+  myMap.setZoom(2);
 
   if (!!panoramaPlacemark) myMap.geoObjects.remove(panoramaPlacemark);
   if (!!answerPlacemark) myMap.geoObjects.remove(answerPlacemark);
