@@ -75,7 +75,7 @@ function displayPanorama(x, y) {
 }
 
 function nextLocation() {
-  let t_coords = [random_x(), random_y()];
+  let t_coords = rand.list(LOCATION_DATA.moscow);
 
   displayPanorama(t_coords[0], t_coords[1]);
 }
