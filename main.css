@@ -8,6 +8,7 @@ body {
   background-color: blue;
   border: 1px solid black;
   width: auto;
+  height: 100%;
 }
 .marker-class {
   --markerWidth: 6rem;
