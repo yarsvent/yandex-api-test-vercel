@@ -150,7 +150,7 @@ function nextLocation() {
 
   let t_map = document.getElementById("mapContainer");
   t_map.style.width = "32%";
-  t_map.style.height = "32%";
+  t_map.style.height = "35%";
 }
 
 function answerPanorama() {
@@ -193,7 +193,7 @@ function answerPanorama() {
     //alert('Расстояние до места: '+t_answer_display+' километра.');
   }
   else {
-    t_answer_display = Math.floor(t_answer/1000)+" метров";
+    t_answer_display = Math.floor(t_answer*1000)+" метров";
     //alert('Расстояние до места: '+t_answer_display+' метров.');
   }
   let t_score_round = Math.round( 2000 * Math.exp(-Math.pow(t_answer/1000, 1)) );
