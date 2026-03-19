@@ -24,4 +24,10 @@ body {
   display: inline-block;
   border-radius: 0.25rem;
   padding: 0.4rem;
+  opacity: 0.5;
+}
+.marker-class:hover {
+  opacity: 1;
+  border: 2px solid blue;
+  animation: fadeIn 3s;
 }

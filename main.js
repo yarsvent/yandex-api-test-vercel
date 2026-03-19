@@ -21,7 +21,7 @@ var rand = {};
     return Math.random() * (max - min) + min;
   }
 
-setTimeout(initMap, 500);
+setTimeout(initMap, 1);
 
 function random_x() {
   return rand.numb2(20,70);
