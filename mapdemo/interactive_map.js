@@ -9,7 +9,7 @@ async function initMap() {
           {
               location: {
                   center: [37.648308, 55.753636],
-                  zoom: 15
+                  zoom: 1
               }
           }
       );
@@ -31,35 +31,38 @@ async function initMap() {
       });
       map.addChild(layer);
 
-      const features_layer = new ymaps3.YMapDefaultFeaturesLayer();
-      map.addChild(features_layer);
+      for (let place of LOCATION_DATA) {
+        const features_layer = new ymaps3.YMapDefaultFeaturesLayer();
+        map.addChild(features_layer);
 
-      const markerElement = document.createElement('div');
-      markerElement.className = 'map-marker';
-      markerElement.innerHTML = "<span class=\"map-flag\"></span>ВШЭ";
+        const markerElement = document.createElement('div');
+        markerElement.className = 'map-marker';
+        markerElement.innerHTML = "<span class=\"map-flag\"></span>"+place.name;
 
-      const marker = new ymaps3.YMapMarker(
-        {
-          coordinates: [37.648308, 55.753636],
-          draggable: false
-        },
-        markerElement
-      );
+        const marker = new ymaps3.YMapMarker(
+          {
+            coordinates: place.location,
+            draggable: false
+          },
+          markerElement
+        );
 
-      // Description
-      const descriptionElement = document.createElement('div');
-      descriptionElement.innerHTML = "<b>Высшая Школа Экономики</b><br>Национа́льный иссле́довательский университе́т «Вы́сшая шко́ла эконо́мики» (НИУ ВШЭ; разг. «Вы́шка») — российское федеральное государственное автономное высшее учебное заведение. Университет ведёт подготовку и исследования в области социальных и гуманитарных наук, также реализует программы в естественно-научной, медицинской, технической и сельскохозяйственной сферах.";
-      descriptionElement.classList.add("map-description");
-      markerElement.appendChild(descriptionElement);
+        // Description
+        const descriptionElement = document.createElement('div');
+        descriptionElement.innerHTML = "<b>"+place.full_name"</b><br>"+place.description;
+        descriptionElement.classList.add("map-description");
+        descriptionElement.style.backgroundImage = "url('flags/+"+place.flag+"')";
+        markerElement.appendChild(descriptionElement);
 
-      markerElement.addEventListener("click", function() {
-        descriptionElement.style.display = "block";
-      });
-      //markerElement.addEventListener("mouseout", function() {
-      //  descriptionElement.style.display = "none";
-      //});
+        markerElement.addEventListener("click", function() {
+          descriptionElement.style.display = "block";
+        });
+        //markerElement.addEventListener("mouseout", function() {
+        //  descriptionElement.style.display = "none";
+        //});
 
-      map
-        .addChild(marker);
+        map
+          .addChild(marker);
+      }
     }
 }
