@@ -24,6 +24,7 @@ body {
   transition: background-color 0.25s, color 0.25s;
   text-align: center;
   font-size: 16px;
+  z-index: 10;
 }
 .map-flag {
   position: absolute;
@@ -54,6 +55,7 @@ body {
   border-radius: 0.5rem;
   color: white;
   padding: 1rem;
+  z-index: 100;
 }
 @font-face {
   font-family: "HSESans";
