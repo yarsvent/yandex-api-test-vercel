@@ -33,7 +33,8 @@ body {
 .map-description {
   display: none;
   position: absolute;
-  left: 115%;
+  left: 100%;
+  top: 0;
   width: 300%;
   min-height: 2rem;
   background-color: #374B9B;
