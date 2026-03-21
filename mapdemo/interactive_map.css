@@ -40,9 +40,6 @@ body {
   background-color: #374B9B;
   border-radius: 0.5rem;
 }
-.map-description:hover {
-  display: block;
-}
 @font-face {
   font-family: "HSESans";
   src: url("HSESans-Regular.otf");

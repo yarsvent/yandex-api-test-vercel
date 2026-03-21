@@ -51,6 +51,13 @@ async function initMap() {
       descriptionElement.classList.add("map-description");
       markerElement.appendChild(descriptionElement);
 
+      markerElement.addEventListener("mouseover", function() {
+        descriptionElement.style.display = "block";
+      });
+      markerElement.addEventListener("mouseout", function() {
+        descriptionElement.style.display = "none";
+      });
+
       map
         .addChild(marker);
     }
