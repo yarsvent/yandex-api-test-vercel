@@ -1,13 +1,12 @@
 setTimeout(initMap, 1);
 const locationMarkers = {};
 const locationDescriptions = {};
-let map;
 async function initMap() {
     const {YMap, YMapDefaultSchemeLayer} = ymaps3;
     await ymaps3.ready.then(init);
 
     function init() {
-      map = new YMap(
+      const map = new YMap(
           document.getElementById('interactiveMap'),
           {
               location: {
@@ -46,9 +45,7 @@ async function initMap() {
         const marker = new ymaps3.YMapMarker(
           {
             coordinates: place.location,
-            draggable: false,
-            zIndex : 10,
-            id : place.name
+            draggable: false
           },
           markerElement
         );
@@ -64,6 +61,10 @@ async function initMap() {
           document.querySelectorAll('.map-description').forEach((el) => {
             el.style.display = 'none';
           });
+          document.querySelectorAll('.map-marker').forEach((el) => {
+            el.style.zIndex = 2000;
+          });
+          this.style.zIndex = 2100;
           descriptionElement.style.display = "block";
         });
         //markerElement.addEventListener("mouseout", function() {
