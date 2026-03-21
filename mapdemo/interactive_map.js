@@ -37,7 +37,7 @@ async function initMap() {
       for (let place of LOCATION_DATA) {
         const markerElement = document.createElement('div');
         markerElement.className = 'map-marker';
-        markerElement.innerHTML = "<span style="+"url('mapdemo/flags/"+place.flag+"')"+"class=\"map-flag\"></span>"+place.name;
+        markerElement.innerHTML = "<span style=\"background-image: url('mapdemo/flags/"+place.flag+"')\" "+"class=\"map-flag\"></span>"+place.name;
 
         const marker = new ymaps3.YMapMarker(
           {
