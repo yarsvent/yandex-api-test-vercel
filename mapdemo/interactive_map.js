@@ -1,4 +1,6 @@
 setTimeout(initMap, 1);
+const locationMarkers = {};
+const locationDescriptions = {};
 async function initMap() {
     const {YMap, YMapDefaultSchemeLayer} = ymaps3;
     await ymaps3.ready.then(init);
@@ -34,8 +36,6 @@ async function initMap() {
       const features_layer = new ymaps3.YMapDefaultFeaturesLayer();
       map.addChild(features_layer);
 
-      const locationMarkers = {};
-      const locationDescriptions = {};
       for (let place of LOCATION_DATA) {
         locationMarkers[place] = document.createElement('div');
         const markerElement = locationMarkers[place];
