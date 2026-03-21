@@ -33,9 +33,9 @@ body {
 .map-description {
   display: none;
   position: absolute;
-  left: -200%;
+  left: -150%;
   top: 105%;
-  min-width: 400%;
+  width: 300%;
   min-height: 2rem;
   background-color: #374B9B;
   border-radius: 0.5rem;
