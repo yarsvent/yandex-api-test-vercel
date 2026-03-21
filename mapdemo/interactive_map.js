@@ -61,10 +61,6 @@ async function initMap() {
           document.querySelectorAll('.map-description').forEach((el) => {
             el.style.display = 'none';
           });
-          document.querySelectorAll('.map-marker').forEach((el) => {
-            el.style.zIndex = 10;
-          });
-          this.style.zIndex = 100;
           descriptionElement.style.display = "block";
         });
         //markerElement.addEventListener("mouseout", function() {

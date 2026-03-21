@@ -54,6 +54,7 @@ body {
   border-radius: 0.5rem;
   color: white;
   padding: 1rem;
+  z-index: 100 !important;
 }
 @font-face {
   font-family: "HSESans";
