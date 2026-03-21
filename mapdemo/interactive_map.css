@@ -34,7 +34,7 @@ body {
   display: none;
   position: absolute;
   right: -20%;
-  top: 50%;
+  left: 115%;
   width: 300%;
   min-height: 2rem;
   background-color: #374B9B;
