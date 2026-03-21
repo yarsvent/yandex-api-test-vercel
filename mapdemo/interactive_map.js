@@ -36,7 +36,7 @@ async function initMap() {
 
       const markerElement = document.createElement('div');
       markerElement.className = 'map-marker';
-      markerElement.innerText = "<span class=\"map-flag\"></span>ВШЭ";
+      markerElement.innerHTML = "<span class=\"map-flag\"></span>ВШЭ";
 
       const marker = new ymaps3.YMapMarker(
         {
