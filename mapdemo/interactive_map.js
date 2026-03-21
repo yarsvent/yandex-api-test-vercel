@@ -31,10 +31,10 @@ async function initMap() {
       });
       map.addChild(layer);
 
-      for (let place of LOCATION_DATA) {
-        const features_layer = new ymaps3.YMapDefaultFeaturesLayer();
-        map.addChild(features_layer);
+      const features_layer = new ymaps3.YMapDefaultFeaturesLayer();
+      map.addChild(features_layer);
 
+      for (let place of LOCATION_DATA) {
         const markerElement = document.createElement('div');
         markerElement.className = 'map-marker';
         markerElement.innerHTML = "<span style="+"url('mapdemo/flags/"+place.flag+"')"+"class=\"map-flag\"></span>"+place.name;
