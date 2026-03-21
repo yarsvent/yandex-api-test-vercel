@@ -35,6 +35,7 @@ async function initMap() {
       map.addChild(features_layer);
 
       const locationMarkers = {};
+      const locationDescriptions = {};
       for (let place of LOCATION_DATA) {
         locationMarkers[place] = document.createElement('div');
         const markerElement = locationMarkers[place];
@@ -50,7 +51,8 @@ async function initMap() {
         );
 
         // Description
-        const descriptionElement = document.createElement('div');
+        locationDescriptions[place] = document.createElement('div');
+        const descriptionElement = locationDescriptions[place];
         descriptionElement.innerHTML = "<b>"+place.full_name+"</b><br>"+place.description;
         descriptionElement.classList.add("map-description");
         markerElement.appendChild(descriptionElement);
