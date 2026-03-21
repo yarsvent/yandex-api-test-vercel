@@ -57,6 +57,9 @@ async function initMap() {
         descriptionElement.classList.add("map-description");
         markerElement.appendChild(descriptionElement);
 
+        markerElement.addEventListener("click", function() {
+          window.open(place.website);
+        });
         markerElement.addEventListener("mouseenter", function() {
           document.querySelectorAll('.map-description').forEach((el) => {
             el.style.display = 'none';
