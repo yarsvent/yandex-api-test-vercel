@@ -9,7 +9,7 @@ body {
   height: 100%;
 }
 .map-marker {
-  --markerWidth: 3rem;
+  --markerWidth: 6rem;
   padding: 0.5rem;
   border-radius: 1rem;
   width: var(--markerWidth);
