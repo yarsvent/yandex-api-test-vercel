@@ -24,6 +24,7 @@ body {
   transition: background-color 0.25s, color 0.25s;
   text-align: center;
   font-size: 16px;
+  background-image: url('flags/flag_russia.svg');
 }
 .map-marker:hover {
   background-color: #CDDCF0;
