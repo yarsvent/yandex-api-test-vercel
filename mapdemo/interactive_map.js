@@ -34,8 +34,10 @@ async function initMap() {
       const features_layer = new ymaps3.YMapDefaultFeaturesLayer();
       map.addChild(features_layer);
 
+      const locationMarkers = {};
       for (let place of LOCATION_DATA) {
-        const markerElement = document.createElement('div');
+        locationMarkers[place] = document.createElement('div');
+        const markerElement = locationMarkers[place];
         markerElement.className = 'map-marker';
         markerElement.innerHTML = "<span style=\"background-image: url('mapdemo/flags/"+place.flag+"')\" "+"class=\"map-flag\"></span>"+place.name;
 
