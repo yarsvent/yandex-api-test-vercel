@@ -1,12 +1,13 @@
 setTimeout(initMap, 1);
 const locationMarkers = {};
 const locationDescriptions = {};
+let map;
 async function initMap() {
     const {YMap, YMapDefaultSchemeLayer} = ymaps3;
     await ymaps3.ready.then(init);
 
     function init() {
-      const map = new YMap(
+      map = new YMap(
           document.getElementById('interactiveMap'),
           {
               location: {
@@ -45,7 +46,9 @@ async function initMap() {
         const marker = new ymaps3.YMapMarker(
           {
             coordinates: place.location,
-            draggable: false
+            draggable: false,
+            zIndex : 10,
+            id : place.name
           },
           markerElement
         );
