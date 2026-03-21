@@ -35,7 +35,7 @@ async function initMap() {
       map.addChild(features_layer);
 
       const markerElement = document.createElement('div');
-      markerElement.className = 'mapMarker';
+      markerElement.className = 'map-marker';
       markerElement.innerText = "ВШЭ";
 
       const marker = new ymaps3.YMapMarker(
