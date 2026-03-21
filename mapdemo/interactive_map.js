@@ -37,8 +37,8 @@ async function initMap() {
       map.addChild(features_layer);
 
       for (let place of LOCATION_DATA) {
-        locationMarkers[place] = document.createElement('div');
-        const markerElement = locationMarkers[place];
+        locationMarkers[place.name] = document.createElement('div');
+        const markerElement = locationMarkers[place.name];
         markerElement.className = 'map-marker';
         markerElement.innerHTML = "<span style=\"background-image: url('mapdemo/flags/"+place.flag+"')\" "+"class=\"map-flag\"></span>"+place.name;
 
@@ -51,8 +51,8 @@ async function initMap() {
         );
 
         // Description
-        locationDescriptions[place] = document.createElement('div');
-        const descriptionElement = locationDescriptions[place];
+        locationDescriptions[place.name] = document.createElement('div');
+        const descriptionElement = locationDescriptions[place.name];
         descriptionElement.innerHTML = "<b>"+place.full_name+"</b><br>"+place.description;
         descriptionElement.classList.add("map-description");
         markerElement.appendChild(descriptionElement);
