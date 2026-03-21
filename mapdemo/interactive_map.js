@@ -49,7 +49,7 @@ async function initMap() {
 
         // Description
         const descriptionElement = document.createElement('div');
-        descriptionElement.innerHTML = "<b>"+place.full_name"</b><br>"+place.description;
+        descriptionElement.innerHTML = "<b>"+place.full_name+"</b><br>"+place.description;
         descriptionElement.classList.add("map-description");
         descriptionElement.style.backgroundImage = "url('flags/+"+place.flag+"')";
         markerElement.appendChild(descriptionElement);
