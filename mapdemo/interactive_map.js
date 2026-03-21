@@ -70,7 +70,7 @@ async function initMap() {
           this.style.display = 'block';
           descriptionElement.style.display = "block";
         });
-        markerElement.addEventListener("mouseout", function() {
+        markerElement.addEventListener("mouseleave", function() {
           descriptionElement.style.display = "none";
           document.querySelectorAll('.map-marker').forEach((el) => {
             el.style.display = 'block';
