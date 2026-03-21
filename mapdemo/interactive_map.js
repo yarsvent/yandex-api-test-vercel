@@ -51,7 +51,7 @@ async function initMap() {
         const descriptionElement = document.createElement('div');
         descriptionElement.innerHTML = "<b>"+place.full_name+"</b><br>"+place.description;
         descriptionElement.classList.add("map-description");
-        descriptionElement.style.backgroundImage = "url('flags/+"+place.flag+"')";
+        descriptionElement.style.backgroundImage = "url('flags/"+place.flag+"')";
         markerElement.appendChild(descriptionElement);
 
         markerElement.addEventListener("click", function() {
