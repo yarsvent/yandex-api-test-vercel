@@ -56,6 +56,9 @@ async function initMap() {
         markerElement.appendChild(descriptionElement);
 
         markerElement.addEventListener("click", function() {
+          document.querySelectorAll('map-description').forEach((el) => {
+            el.style.display = 'none';
+          });
           descriptionElement.style.display = "block";
         });
         //markerElement.addEventListener("mouseout", function() {
