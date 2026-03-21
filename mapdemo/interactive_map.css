@@ -9,13 +9,17 @@ body {
   height: 100%;
 }
 .map-marker {
-  padding: 1rem;
+  --markerWidth: 3rem;
+  padding: 0.5rem;
   border-radius: 1rem;
-  min-width: 1rem;
+  width: var(--markerWidth);
   min-height: 1rem;
   border: 0.125rem solid black;
   background-color: #0F2D69;
   color: white;
+  position: absolute;
+  left: calc(var(--markerWidth) / -2);
+  bottom: 0;
 }
 @font-face {
   font-family: "HSESans";
