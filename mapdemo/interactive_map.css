@@ -33,12 +33,13 @@ body {
 .map-description {
   display: none;
   position: absolute;
-  left: 25%;
-  top: 0;
-  width: 2rem;
-  height: 2rem;
+  left: 0;
+  top: 100%;
+  min-width: 400%;
+  min-height: 2rem;
   background-color: #374B9B;
   border-radius: 0.5rem;
+  color: white;
 }
 @font-face {
   font-family: "HSESans";
