@@ -62,9 +62,9 @@ async function initMap() {
             el.style.display = 'none';
           });
           document.querySelectorAll('.map-marker').forEach((el) => {
-            el.style.zIndex = 10;
+            el.style.zIndex = 100;
           });
-          this.style.zIndex = 100;
+          this.style.zIndex = 10;
           descriptionElement.style.display = "block";
         });
         //markerElement.addEventListener("mouseout", function() {
