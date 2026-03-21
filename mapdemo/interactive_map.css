@@ -40,6 +40,8 @@ body {
   background-color: #374B9B;
   border-radius: 0.5rem;
   color: white;
+  opacity: 0.5;
+  margin-top: 1rem;
 }
 @font-face {
   font-family: "HSESans";
