@@ -20,6 +20,12 @@ body {
   position: absolute;
   left: calc(var(--markerWidth) / -2);
   bottom: 0;
+  cursor: help;
+  transition: background-color 0.25s;
+}
+.map-marker:hover {
+  background-color: #374B9B;
+  transition: background-color 0.25s;
 }
 @font-face {
   font-family: "HSESans";
