@@ -34,8 +34,8 @@ body {
   height: 50%;
   background-image: url('flags/flag_russia.svg');
   background-repeat: no-repeat;
-  background-size: 110% 100%;
-  background-position: 30% 30%;
+  background-size: 130% 100%;
+  background-position: 50% 30%;
   border: 1px solid white;
   border-radius: 50%;
 }
