@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+body {
+  font-family: HSESans;
+}
 #interactiveMap {
   width: auto;
   height: 100%;
@@ -11,5 +14,17 @@
   min-width: 1rem;
   min-height: 1rem;
   border: 0.125rem solid black;
-  background-color: white;
+  background-color: #0F2D69;
+  color: white;
+}
+@font-face {
+  font-family: "HSESans";
+  src: url("HSESans-Regular.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "HSESans";
+  src: url("HSESans-Bold.otf");
+  font-weight: bold;
 }
