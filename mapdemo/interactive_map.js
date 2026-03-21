@@ -1,7 +1,6 @@
 setTimeout(initMap, 1);
 const locationMarkers = {};
 const locationDescriptions = {};
-let leaveCooldown = 0;
 async function initMap() {
     const {YMap, YMapDefaultSchemeLayer} = ymaps3;
     await ymaps3.ready.then(init);
@@ -62,7 +61,6 @@ async function initMap() {
           window.open(place.website);
         });
         markerElement.addEventListener("mouseenter", function() {
-          leaveCooldown = 0;
           document.querySelectorAll('.map-description').forEach((el) => {
             el.style.display = 'none';
           });
@@ -73,14 +71,10 @@ async function initMap() {
           descriptionElement.style.display = "block";
         });
         markerElement.addEventListener("mouseleave", function() {
-          leaveCooldown++;
-          if (leaveCooldown == 100) {
-            leaveCooldown = 0;
-            descriptionElement.style.display = "none";
-            document.querySelectorAll('.map-marker').forEach((el) => {
-              el.style.display = 'block';
-            });
-          }
+          descriptionElement.style.display = "none";
+          document.querySelectorAll('.map-marker').forEach((el) => {
+            el.style.display = 'block';
+          });
         });
 
         map
