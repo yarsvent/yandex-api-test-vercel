@@ -46,8 +46,9 @@ async function initMap() {
         markerElement
       );
 
-      const descriptionElement = document.createElement('map-description');
+      const descriptionElement = document.createElement('div');
       descriptionElement.innerHTML = "Meow<br>Meow meow";
+      descriptionElement.classList.add("map-description");
       markerElement.appendChild(descriptionElement);
 
       map
