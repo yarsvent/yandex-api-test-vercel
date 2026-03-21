@@ -33,7 +33,7 @@ body {
 .map-description {
   display: none;
   position: absolute;
-  left: 0;
+  left: -100%;
   top: calc(100% + 0.5rem);
   width: 300%;
   min-height: 2rem;
