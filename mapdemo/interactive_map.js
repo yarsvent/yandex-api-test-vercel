@@ -55,9 +55,9 @@ async function initMap() {
       markerElement.addEventListener("click", function() {
         descriptionElement.style.display = "block";
       });
-      markerElement.addEventListener("mouseout", function() {
-        descriptionElement.style.display = "none";
-      });
+      //markerElement.addEventListener("mouseout", function() {
+      //  descriptionElement.style.display = "none";
+      //});
 
       map
         .addChild(marker);
