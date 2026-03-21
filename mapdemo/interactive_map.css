@@ -33,7 +33,7 @@ body {
 .map-description {
   display: none;
   position: absolute;
-  left: -37.5%;
+  left: -300%;
   top: 105%;
   width: 300%;
   min-height: 2rem;
