@@ -34,10 +34,8 @@ body {
   height: 50%;
   background-image: url('flags/flag_russia.svg');
   background-repeat: no-repeat;
-  background-size: 120% 110%;
-  background-position: 40% 50%;
+  background-size: 100% 100%;
   border: 1px solid white;
-  border-radius: 50%;
 }
 .map-marker:hover {
   background-color: #CDDCF0;
