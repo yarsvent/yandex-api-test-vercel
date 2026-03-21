@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+#interactiveMap {
+  width: auto;
+  height: 100%;
+}
+.marker {
+  border-radius: 1rem;
+  min-width: 1rem;
+  min-height: 1rem;
+  border: 0.125rem solid black;
+  background-color: white;
+}
