@@ -30,12 +30,13 @@ body {
   display: inline-block;
   left: 0.4rem;
   top: 25%;
-  min-width: 1rem;
-  height: 50%;
+  width: 1rem;
+  height: 1rem;
   background-image: url('flags/flag_russia.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border: 2px solid white;
+  border-radius: 50%;
 }
 .map-marker:hover {
   background-color: #CDDCF0;
