@@ -1,6 +1,7 @@
-setTimeout(initMap, 1);
 const locationMarkers = {};
 const locationDescriptions = {};
+
+initMap();
 async function initMap() {
     const {YMap, YMapDefaultSchemeLayer} = ymaps3;
     await ymaps3.ready.then(init);
@@ -40,7 +41,7 @@ async function initMap() {
         locationMarkers[place.name] = document.createElement('div');
         const markerElement = locationMarkers[place.name];
         markerElement.className = 'map-marker';
-        markerElement.innerHTML = "<span style=\"background-image: url('mapdemo/flags/"+place.flag+"')\" "+"class=\"map-flag\"></span>"+place.name;
+        markerElement.innerHTML = "<span style=\"background-image: url('mapdemo/flags/"+place.flag+"')\" "+"class=\"map-flag\"></span>"+place.full_name;
 
         const marker = new ymaps3.YMapMarker(
           {
