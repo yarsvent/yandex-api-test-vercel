@@ -9,9 +9,7 @@ body {
   height: 100%;
 }
 .map-marker {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   --markerWidth: 8rem;
   padding: 0.25rem;
   border-radius: 1rem;
@@ -30,8 +28,8 @@ body {
 }
 .map-flag {
   display: inline-block;
-  left: 0.4rem;
-  top: 25%;
+  margin-left: 0.4rem;
+  margin-top: 25%;
   width: 1rem;
   height: 1rem;
   background-image: url('flags/flag_russia.svg');
