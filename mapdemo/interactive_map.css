@@ -40,7 +40,7 @@ body {
   float: left;
 }
 .map-marker-name {
-
+  text-align: left;
 }
 .map-marker:hover {
   background-color: #CDDCF0;
