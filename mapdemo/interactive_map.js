@@ -41,7 +41,7 @@ async function initMap() {
         locationMarkers[place.name] = document.createElement('div');
         const markerElement = locationMarkers[place.name];
         markerElement.className = 'map-marker';
-        markerElement.innerHTML = "<span style=\"background-image: url('mapdemo/flags/"+place.flag+"')\" "+"class=\"map-flag\"></span>"+place.full_name;
+        markerElement.innerHTML = "<span style=\"background-image: url('mapdemo/flags/"+place.flag+"')\" "+"class=\"map-flag\"></span><span class=\"map-marker-name\">"+place.full_name+"<span>";
 
         const marker = new ymaps3.YMapMarker(
           {

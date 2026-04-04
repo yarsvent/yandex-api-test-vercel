@@ -38,6 +38,9 @@ body {
   border: 2px solid white;
   border-radius: 50%;
 }
+.map-marker-name {
+  margin-left: 1rem;
+}
 .map-marker:hover {
   background-color: #CDDCF0;
   color: #374B9B;
