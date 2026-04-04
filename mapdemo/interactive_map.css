@@ -9,7 +9,9 @@ body {
   height: 100%;
 }
 .map-marker {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   --markerWidth: 8rem;
   padding: 0.25rem;
   border-radius: 1rem;
