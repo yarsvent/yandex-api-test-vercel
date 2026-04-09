@@ -3,9 +3,11 @@ const locationDescriptions = {};
 
 initMap();
 async function initMap() {
-    const {YMap, YMapDefaultSchemeLayer} = ymaps3;
-    await ymaps3.ready.then(init);
+    await ymaps3.ready;
 
+    const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+
+    init();
     function init() {
       const map = new YMap(
           document.getElementById('interactiveMap'),
