@@ -1,56 +1,56 @@
 const LOCATION_DATA = [
   {
-    name : "ВШЭ",
-    full_name : "Высшая Школа Экономики",
-    description : "Национа́льный иссле́довательский университе́т «Вы́сшая шко́ла эконо́мики» (НИУ ВШЭ; разг. «Вы́шка») — российское федеральное государственное автономное высшее учебное заведение. Университет ведёт подготовку и исследования в области социальных и гуманитарных наук, также реализует программы в естественно-научной, медицинской, технической и сельскохозяйственной сферах.",
+    name : "HSE",
+    full_name : "Higher School of Economics",
+    description : "HSE University is a public research university founded in 1992 and headquartered in Moscow, Russia. HSE offers education at all levels – from a lyceum for school students to post-graduate and MBA programmes. Students can pursue training in a number of fields, including the social sciences, economics, humanities, law, engineering, computer science, mathematics, physics, chemistry, biology and biotechnology, as well as in creative disciplines.",
     flag : "flag_russia.svg",
     location : [37.648308, 55.753636],
     website : "https://www.hse.ru/"
   },
   {
     name : "SNU",
-    full_name : "Сеульский Национальный Университет",
-    description : "Сеульский университет (кор. 서울대학교) — крупнейший и самый известный вуз Южной Кореи, расположенный в Сеуле. Наиболее престижный из национальных университетов Южной Кореи. Относится к группе из 10 так называемых «флагманских национальных университетов» Южной Кореи.",
+    full_name : "Seoul National University",
+    description : "Seoul National University is a public research university in Seoul, South Korea. Founded in 1946, it is one of the Flagship Korean National Universities. In 2015, Thomson-Reuters ranked SNU as the 31st most innovative institution in the world. QS World University Rankings (2023) ranked SNU as the 29th best university in the world and 7th in Asia.",
     flag : "flag_south_korea.svg",
     location : [126.954136, 37.464467],
     website : "https://en.snu.ac.kr/"
   },
   {
     name : "SMU",
-    full_name : "Сингапурский Университет Менеджмента",
-    description : "Сингапурский университет менеджмента (SMU) — частный университет в Сингапуре. Основанный в 2000 году, SMU является третьим старейшим автономным университетом в стране, чья образовательная модель основана на принципах Уортонской школы бизнеса. Университет имеет тройную аккредитацию AACSB, EQUIS и AMBA. В 2024 году SMU занял 44-е место в мире по направлению «Бизнес и менеджмент», а также вошел в топ-100 по направлению «Экономика и финансы» по версии QS.",
+    full_name : "Singapore Management University",
+    description : "Singapore Management University (SMU) is a publicly-funded private university in Singapore. The university is triple accredited by AACSB, EQUIS and AMBA. SMU enrols about 10,000 undergraduate and postgraduate students, offering undergraduate and graduate degree programmes in accountancy, business administration, business analytics, economics, financial services, information systems, software engineering, law, and the social sciences.",
     flag : "flag_singapore.svg",
     location : [103.851036, 11.297025],
     website : "https://www.smu.edu.sg/"
   },
   {
     name : "KHU",
-    full_name : "Университет Кёнхи",
-    description : "Университет Кёнхи (кор. 경희대학교) — частный университет в Республике Корея с кампусами в Сеуле и Сувоне. Университет предлагает программы обучения за рубежом в партнерстве с 434 родственными университетами в 69 странах.",
+    full_name : "Kyung Hee University",
+    description : "Kyung Hee University is a private research university in South Korea with campuses in Seoul and Suwon. The University offers study abroad programs in partnership with universities in 69 countries.",
     flag : "flag_south_korea.svg",
     location : [127.079891, 37.243568],
     website : "https://www.khu.ac.kr/eng/user/main/view.do"
   },
   {
     name : "NU",
-    full_name : "Нагойский университет",
-    description : "Нагойский Университет (яп. 名古屋大学) — один из национальных университетов Японии. Расположен в восточной части города Нагоя, является одним из наиболее престижных в стране. Университет уходит своими корнями в 1871 год, когда он был временной медицинской школой.",
+    full_name : "Nagoya University",
+    description : "Nagoya University (名古屋大学) is one of Japan's national universities. Located in the eastern part of Nagoya, it is one of the most prestigious in the country. The university's roots date back to 1871, when it was a temporary medical school.",
     flag : "flag_japan.svg",
     location : [136.96821297042337, 35.15378627221215],
     website : "https://en.nagoya-u.ac.jp"
   },
   {
-    name : "Тиба",
-    full_name : "Университет Тиба",
-    description : "Университет Тиба (千葉大学) ​​— национальный университет, расположенный в городе Тиба, столице префектуры Тиба, региона, известного своими промышленными, интеллектуальными и международными достижениями.",
+    name : "Chiba",
+    full_name : "Chiba University",
+    description : "Chiba University (千葉大学) is a national university located in Chiba City, the capital of Chiba Prefecture, a region renowned for its industrial, intellectual, and international achievements.",
     flag : "flag_japan.svg",
     location : [140.10318710080003, 35.627782955269694],
     website : "https://www.chiba-u.ac.jp/e/"
   },
   {
-    name : "Хосэй",
-    full_name : "Университет Хосэй",
-    description : "Университет Хосэй (яп. 法政大学) — частный японский университет, возникший в 1920 году на базе Токийского общества юриспруденции. Штаб-квартира расположена в токийском специальном районе Тиёда, имеются три кампуса. При университете действуют Институт исследования социальных проблем, Институт юриспруденции и Центр культуры Окинавы.",
+    name : "Hosei",
+    full_name : "Hosei University",
+    description : "Hosei University (法政大学) is a private Japanese university founded in 1920 by the Tokyo Jurisprudence Society. Headquartered in Chiyoda, Tokyo, it has three campuses. The university also houses the Institute of Social Research, the Institute of Law, and the Okinawa Cultural Center.",
     flag : "flag_japan.svg",
     location : [139.7416675849414, 35.695757044899004],
     website : "https://en.nagoya-u.ac.jp"
