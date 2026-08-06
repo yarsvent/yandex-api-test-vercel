@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title>not 詐欺サイト</title><meta charset="utf-8" />
+  <style>
+    body {
+      text-align: center;
+    }
+    button {
+      margin-inline: 25%;
+      height: 5rem;
+      background-color: black;
+      color: white;
+      font-size: 35px;
+      border: 2px solid red;
+    }
+  </style>
+</head>
+<body>
+  <h1>ようこそ！</h1>
+  <h2>これは詐欺サイトではありません。</h2>
+  <h2>御金が欲しいから、ご協力お願いいたします。</h2>
+  <button id="okuru" onclick="alert('ありがとうございます！\n2000000円を銀行からお送りになりました。')">お金を送る</button>
+</body>
+<script>
+  let ok_button = document.getElementById("okuru");
+  let t_max_rotate = 15;
+  let t_deg = 0;
+  let t_speed = 0.6;
+  let t_rmode = 0;
+  setInterval(function() {
+    ok_button.style.transform = 'rotate('+t_deg+'deg)';
+    if (t_rmode == 0) t_deg += t_speed;
+    if (t_rmode == 1) t_deg -= t_speed;
+    if (t_deg >= t_max_rotate) t_rmode = 1;
+    if (t_deg <= -t_max_rotate) t_rmode = 0;
+  },1000/60);
+</script>
+</html>
